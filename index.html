@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidlet.top | 个人工具与项目</title>
+    <style>
+        /* 基础变量与明暗主题自动切换 */
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --card-hover-border: #94a3b8;
+            --accent-color: #0f172a;
+            --desc-color: #64748b;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0f172a;
+                --text-color: #f1f5f9;
+                --card-bg: #1e293b;
+                --card-border: #334155;
+                --card-hover-border: #64748b;
+                --accent-color: #f8fafc;
+                --desc-color: #94a3b8;
+            }
+        }
+
+        /* 全局重置与排版 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 4rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--desc-color);
+        }
+
+        /* 模块化区域 */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* 网格布局与卡片设计（极简风格） */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            display: block;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            border-color: var(--card-hover-border);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--desc-color);
+            line-height: 1.5;
+        }
+        
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hidlet</h1>
+            <p>工具箱与个人项目导览</p>
+        </header>
+
+        <main>
+            <!-- 实用工具分类 -->
+            <section>
+                <h2>🛠️ 实用工具</h2>
+                <div class="grid">
+                    <a href="/BurnerListHTML/" class="card">
+                        <div class="card-title">燃气灶清单 (Burner List)</div>
+                        <div class="card-desc">基于专注力限制理论的待办事项管理工具，确保主线任务优先完成。</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 跑团工具分类 -->
+            <section>
+                <h2>🐉 跑团工具</h2>
+                <div class="grid">
+                    <a href="/DND32BuyHTML/" class="card">
+                        <div class="card-title">D&D 32点购点辅助</div>
+                        <div class="card-desc">专为 Dungeons & Dragons 设计的 32-point buy 属性分配与车卡工具。</div>
+                    </a>
+                    
+                    <a href="/DiceHTML/" class="card">
+                        <div class="card-title">3D 网页掷骰器</div>
+                        <div class="card-desc">支持 D4 到 D20 物理模拟的 3D 跑团骰子，随时进行检定。</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
